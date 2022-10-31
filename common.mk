@@ -230,6 +230,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworksResCommon \
+    LineageApertureAppCommon \
     LineageSdkCommon \
     SettingsProviderResCommon \
     SystemUIResCommon \
