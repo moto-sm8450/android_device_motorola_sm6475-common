@@ -107,6 +107,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.demura-service
 
+TARGET_USES_VULKAN := true
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
