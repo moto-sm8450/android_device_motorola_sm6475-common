@@ -187,6 +187,10 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 $(call soong_config_set_bool,livedisplay_sysfs,enable_se,true)
 
+# Memtrack
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.memtrack-service
+
 # MotoActions
 PRODUCT_PACKAGES += \
     MotoActions \
