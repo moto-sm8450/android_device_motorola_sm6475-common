@@ -378,6 +378,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += device/motorola/sm6475-common/vintf/manifest.xml
 
+# Virtualization
+$(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
