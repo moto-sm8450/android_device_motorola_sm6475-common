@@ -86,6 +86,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.bluetooth.audio-V4-ndk.so', 'android.hardware.bluetooth.audio-V5-ndk.so'),
     ('vendor/lib64/libapengine.so', 'vendor/lib64/libqti-perfd.so'): blob_fixup()
         .replace_needed('vendor.qti.hardware.display.config-V5-ndk.so', 'vendor.qti.hardware.display.config-V12-ndk.so'),
+    'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
+        .replace_needed('android.hardware.bluetooth.audio-V4-ndk.so', 'android.hardware.bluetooth.audio-V5-ndk.so')
+        .replace_needed('android.hardware.audio.core.sounddose-V2-ndk.so', 'android.hardware.audio.core.sounddose-V3-ndk.so')
+        .replace_needed('android.hardware.audio.core-V2-ndk.so', 'android.hardware.audio.core-V3-ndk.so'),
     ('vendor/lib64/liboemcrypto.so', 'vendor/lib64/libops.so'): blob_fixup()
         .replace_needed('vendor.qti.hardware.display.config-V7-ndk.so', 'vendor.qti.hardware.display.config-V12-ndk.so'),
     'vendor/lib64/libsensorndkbridge.so': blob_fixup()

@@ -42,6 +42,7 @@ vendor/lib64/libaualgo_foundation.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiochargerlistener.so
 vendor/lib64/libaudioplatformconverter.qti.so
+vendor/lib64/libaudioserviceexampleimpl.so
 vendor/lib64/libbatterylistener.so
 vendor/lib64/libext_tflite_c.so
 vendor/lib64/libfmpal.so
