@@ -17,25 +17,13 @@ vendor/lib/rfsa/adsp/libQnnHtpV73QemuDriver.so
 vendor/lib/rfsa/adsp/libQnnHtpV73Skel.so
 
 # Audio libraries
-vendor/bin/hw/audiohalservice.qti
-vendor/bin/audioadsprpcd
-vendor/etc/init/audiohalservice_qti.rc
-vendor/etc/init/vendor.qti.audio-adsprpc-service.rc
 vendor/etc/vintf/manifest/audioeffectservice_qti.xml
 vendor/etc/vintf/manifest/manifest_audiocorehal_default.xml
-vendor/etc/vintf/manifest/soundtrigger.qti.xml
 vendor/lib64/android.hardware.bluetooth.audio-impl.so:vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so;FIX_SONAME
 vendor/lib64/hw/libaudiocorehal.default.so
 vendor/lib64/hw/libaudiocorehal.qti.so
 vendor/lib64/hw/libaudioeffecthal.qti.so
-vendor/lib64/hw/libsoundtriggerhal.qti.so
 vendor/lib64/libadm.so
-vendor/lib64/libagm.so
-vendor/lib64/libagm_compress_plugin.so
-vendor/lib64/libagm_mixer_plugin.so
-vendor/lib64/libagm_pcm_plugin.so
-vendor/lib64/libagmclient.so
-vendor/lib64/libagmipcservice.so
 vendor/lib64/libar-pal.so
 vendor/lib64/libaualgo_azp_component.so
 vendor/lib64/libaualgo_azp_wrapper.so
@@ -45,21 +33,12 @@ vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiochargerlistener.so
 vendor/lib64/libaudioplatformconverter.qti.so
 vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_DEPS
-vendor/lib64/libbatterylistener.so
 vendor/lib64/libbluetooth_audio_session_aidl.so:vendor/lib64/libbluetooth_audio_session_aidl_prebuilt.so;FIX_SONAME
 vendor/lib64/libdapparamstorage.so
 vendor/lib64/libext_tflite_c.so
-vendor/lib64/libfmpal.so
-vendor/lib64/libhfp_pal.so
-vendor/lib64/liblx-ar_util.so
-vendor/lib64/liblx-osal.so
 vendor/lib64/libmcs.so
 vendor/lib64/libpal_net_if.so
-vendor/lib64/libpalipcservice.so
 vendor/lib64/libqtigefar.so
-vendor/lib64/libsndcardparser.so
-vendor/lib64/vendor.qti.hardware.agm-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.pal-V1-ndk.so
 
 # Audio misc
 vendor/etc/aualgo/ainr_tfv2.dat
