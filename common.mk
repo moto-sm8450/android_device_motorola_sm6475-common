@@ -83,6 +83,7 @@ PRODUCT_PACKAGES += \
     libsoundtriggerhal.qti \
     libvisualizeraidl \
     libvolumelistener \
+    qtiaudiohalvendorextn \
     qti-audio-types-aidl-V1-ndk.vendor
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8450-6.6/audio/primary-hal
