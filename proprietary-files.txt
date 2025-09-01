@@ -38,7 +38,7 @@ vendor/lib64/libbluetooth_audio_session_aidl.so:vendor/lib64/libbluetooth_audio_
 vendor/lib64/libext_tflite_c.so
 vendor/lib64/libmcs.so
 vendor/lib64/libpal_net_if.so
-vendor/lib64/libqtigefar.so
+vendor/lib64/libqtigefar.so;DISABLE_DEPS
 
 # Audio misc
 vendor/etc/aualgo/ainr_tfv2.dat
