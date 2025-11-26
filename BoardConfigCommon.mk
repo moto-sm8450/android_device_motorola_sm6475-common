@@ -97,6 +97,7 @@ TARGET_KERNEL_CONFIG := \
     vendor/parrot_GKI.config \
     vendor/ext_config/moto-parrot.config \
     vendor/ext_config/moto-parrot-gki.config
+TARGET_KERNEL_VERSION := 6.6
 
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/motorola/sm6475-modules
 
