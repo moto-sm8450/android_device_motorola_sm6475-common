@@ -209,6 +209,7 @@ PRODUCT_PACKAGES += \
     WifiResTarget
 
 # Partitions
+PRODUCT_BUILD_PVMFW_IMAGE := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Permissions
