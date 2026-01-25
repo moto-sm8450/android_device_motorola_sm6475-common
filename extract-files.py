@@ -72,9 +72,6 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/lib64/hw/libaudioeffecthal.qti.so',
         'vendor/lib64/libdpps.so', 'vendor/lib64/libsnapdragoncolor-manager.so'): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
-    'vendor/lib64/soundfx/libbundleaidl.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V3-ndk.so')
-        .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
     'vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so': blob_fixup()
         .replace_needed('libbluetooth_audio_session_aidl.so', 'libbluetooth_audio_session_aidl_prebuilt.so'),
     ('vendor/lib64/libapengine.so', 'vendor/lib64/libqti-perfd.so'): blob_fixup()
