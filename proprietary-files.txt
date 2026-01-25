@@ -1,8 +1,5 @@
 # All unpinned blobs below are extracted from 16 W1VAS36.62-22-16-1-1 a92c51-52422 release-keys.
 
-# Current blobs with ELF checks disabled:
-# android.hardware.bluetooth.audio_sw depends on libaudioserviceexampleimpl, which depends on old AIDL versions.
-
 # ADSP
 vendor/bin/adsprpcd
 vendor/bin/loadalgo
@@ -29,7 +26,7 @@ vendor/lib64/libar-pal.so
 vendor/lib64/libaualgo_azp_component.so
 vendor/lib64/libaualgo_azp_wrapper.so
 vendor/lib64/libaualgo_foundation.so
-vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so;FIX_SONAME
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so;DISABLE_DEPS;FIX_SONAME
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiochargerlistener.so
 vendor/lib64/libaudioplatformconverter.qti.so;DISABLE_DEPS
@@ -81,7 +78,7 @@ vendor/lib64/vendor.qti.hardware.bttpi-V3-ndk.so
 
 # Bluetooth (A2DP)
 vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
-vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so;DISABLE_CHECKELF
+vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so;DISABLE_DEPS
 vendor/lib64/btaudio_offload_if.so
 vendor/lib64/libbluetooth_audio_session_aidl_qti.so
 vendor/lib64/libbluetooth_audio_session_qti.so
