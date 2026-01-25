@@ -67,7 +67,6 @@ PRODUCT_PACKAGES += \
     libagm_pcm_plugin \
     libalsautilsv2.vendor \
     libaudiochargerlistener \
-    libaudioutils_shim \
     libbatterylistener \
     libbundleaidl \
     libdownmixaidl \
@@ -84,7 +83,15 @@ PRODUCT_PACKAGES += \
     libsoundtriggerhal.qti \
     libvisualizeraidl \
     libvolumelistener \
-    qtiaudiohalvendorextn \
+    qtiaudiohalvendorextn
+
+PRODUCT_PACKAGES += \
+    android.hardware.audio.common-V1-ndk.vendor \
+    android.hardware.audio.core-V2-ndk.vendor \
+    android.hardware.audio.core.sounddose-V1-ndk.vendor \
+    libaudioutils_shim \
+    libmediautils_vendor.vendor \
+    libmemunreachable.vendor \
     qti-audio-types-aidl-V1-ndk.vendor
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8450-6.6/audio/primary-hal
