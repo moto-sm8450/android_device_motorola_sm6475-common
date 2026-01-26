@@ -66,6 +66,7 @@ PRODUCT_PACKAGES += \
     libagm_mixer_plugin \
     libagm_pcm_plugin \
     libalsautilsv2.vendor \
+    libaudioaidlcommon.vendor \
     libaudiochargerlistener \
     libbatterylistener \
     libbundleaidl \
