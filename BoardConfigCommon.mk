@@ -94,14 +94,14 @@ BOARD_USES_GENERIC_KERNEL_IMAGE := true
 TARGET_KERNEL_SOURCE := kernel/motorola/sm6475
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
-    vendor/parrot_GKI.config \
-    vendor/ext_config/moto-parrot.config \
-    vendor/ext_config/moto-parrot-gki.config
+    vendor/parrot_perf.config \
+    vendor/ext_config/moto-parrot.config
 TARGET_KERNEL_VERSION := 6.6
 
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/motorola/sm6475-modules
 
 # Kernel Modules
+BOARD_SYSTEM_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.systemdlkm_blocklist.msm.parrot
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load))
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.vendor_blocklist.msm.parrot
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.vendor_boot))
@@ -111,60 +111,55 @@ BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
 
 TARGET_KERNEL_EXT_MODULES := \
     qcom/opensource/mmrm-driver \
+    qcom/opensource/mm-drivers/msm_ext_display \
+    qcom/opensource/mm-drivers/sync_fence \
     qcom/opensource/audio-kernel \
+    qcom/opensource/securemsm-kernel \
+    qcom/opensource/synx-kernel \
     qcom/opensource/camera-kernel \
-    qcom/opensource/cvp-kernel \
+    qcom/opensource/data-kernel/drivers/smem-mailbox \
+    qcom/opensource/datarmnet-ext/mem \
     qcom/opensource/dataipa/drivers/platform/msm \
     qcom/opensource/datarmnet/core \
     qcom/opensource/datarmnet-ext/aps \
     qcom/opensource/datarmnet-ext/offload \
-    qcom/opensource/datarmnet-ext/shs \
     qcom/opensource/datarmnet-ext/perf \
     qcom/opensource/datarmnet-ext/perf_tether \
     qcom/opensource/datarmnet-ext/sch \
+    qcom/opensource/datarmnet-ext/shs \
     qcom/opensource/datarmnet-ext/wlan \
     qcom/opensource/display-drivers/msm \
-    qcom/opensource/eva-kernel \
+    qcom/opensource/dsp-kernel \
+    qcom/opensource/graphics-kernel \
+    qcom/opensource/spu-kernel \
     qcom/opensource/video-driver \
+    qcom/opensource/wlan/platform \
     qcom/opensource/wlan/qcacld-3.0/.adrastea \
-    qcom/opensource/wlan/qcacld-3.0/.qca6750
+    qcom/opensource/wlan/qcacld-3.0/.qca6750 \
+    qcom/opensource/bt-kernel \
+    nxp/opensource/driver \
+    st/opensource/driver
 
 TARGET_KERNEL_EXT_MODULES += \
     motorola/drivers/mmi_annotate \
     motorola/drivers/mmi_info \
-    motorola/drivers/backlight/aw99703 \
-    motorola/drivers/backlight/ktd3136 \
     motorola/drivers/power/bm_adsp_ulog \
     motorola/drivers/power/mmi_charger \
     motorola/drivers/power/qti_glink_charger \
     motorola/drivers/power/qpnp_adaptive_charge \
-    motorola/drivers/power/bq27426_fg_mmi \
-    motorola/drivers/power/sgm4154x_charger_lite \
     motorola/drivers/misc/utag \
     motorola/drivers/misc/mmi_stow \
     motorola/drivers/mmi_relay \
     motorola/drivers/misc/mmi_sys_temp \
     motorola/drivers/regulator/dio8015 \
-    motorola/drivers/regulator/wl2864c \
-    motorola/drivers/regulator/wl2866d \
-    motorola/drivers/regulator/slg5bm43670 \
     motorola/drivers/sensors \
-    motorola/drivers/misc/awinic/sarsensor \
-    motorola/drivers/misc/stk501xx \
-    motorola/drivers/misc/sx937x \
-    motorola/drivers/misc/pen \
+    motorola/drivers/misc/hall \
+    motorola/drivers/misc/sx937x_multi \
     motorola/drivers/input/touchscreen/touchscreen_mmi \
-    motorola/drivers/input/touchscreen/focaltech_0flash_v2_mmi \
-    motorola/drivers/input/touchscreen/ili9882_mmi \
     motorola/drivers/input/touchscreen/goodix_berlin_mmi \
-    motorola/drivers/input/touchscreen/nova_0flash_mmi \
-    motorola/drivers/input/misc/anc_fps_mmi \
-    motorola/drivers/input/misc/ets_bix_mmi \
-    motorola/drivers/input/misc/fpc_fps_mmi \
     motorola/drivers/input/misc/goodix_fod_mmi \
-    motorola/drivers/moto_netopt/con_dfpar \
-    motorola/drivers/nfc/st21nfc \
-    motorola/drivers/wlan_antenna
+    motorola/drivers/input/misc/rbs_fod_mmi \
+    motorola/drivers/moto_netopt/con_dfpar
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
