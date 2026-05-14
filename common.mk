@@ -149,6 +149,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.recovery.rc \
     init.target.rc \
+    ueventd-odm.rc \
     ueventd.qcom.rc \
     init.class_main.sh \
     init.mmi.boot.sh \
