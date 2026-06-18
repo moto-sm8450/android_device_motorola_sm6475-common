@@ -10,9 +10,13 @@ allow charge_only chargeonly_data_file:file create_file_perms;
 allow charge_only kmsg_device:chr_file rw_file_perms;
 
 # Read access to pseudo filesystems.
-r_dir_file(charge_only, sysfs_type)
 r_dir_file(charge_only, rootfs)
 r_dir_file(charge_only, cgroup)
+
+# Expand r_dir_file manually while excluding the violating types
+allow charge_only { sysfs_type -vendor_sys_sp_comp -vendor_sys_nonsp_comp }:dir r_dir_perms;
+allow charge_only { sysfs_type -vendor_sys_sp_comp -vendor_sys_nonsp_comp }:file r_file_perms;
+allow charge_only { sysfs_type -vendor_sys_sp_comp -vendor_sys_nonsp_comp }:lnk_file r_file_perms;
 
 # Self permissions
 allow charge_only self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
