@@ -40,6 +40,7 @@ on early-init
     setprop ro.vendor.boot.powerup_reason ${ro.boot.powerup_reason}
     setprop ro.vendor.boot.bl_state ${ro.boot.bl_state}
     setprop ro.vendor.boot.serialno ${ro.boot.serialno}
+    setprop ro.vendor.boot.nal_id ${ro.boot.nal_id}
     setprop ro.vendor.zygote ${ro.zygote}
     setprop persist.radio.multisim.config ${persist.vendor.radio.multisim.config}
 
@@ -75,7 +76,6 @@ on post-fs && property:ro.vendor.hw.fsg_super_image=yes
 
 on post-fs
     mkdir /mnt/vendor/persist/camera 0755 vendor_tcmd vendor_tcmd
-    mkdir /mnt/vendor/persist/camera/iqtuning 0755 vendor_tcmd vendor_tcmd
     mkdir /mnt/vendor/persist/camera/dualcal 0775 camera vendor_tcmd
     mkdir /mnt/vendor/persist/camera/focus 0775 camera vendor_tcmd
     mkdir /mnt/vendor/persist/camera/ledcal 0775 camera vendor_tcmd
@@ -84,13 +84,14 @@ on post-fs
     mkdir /mnt/vendor/persist/batt_health 0775 vendor_pwric vendor_pwric
     mkdir /mnt/vendor/persist/mdm 0770 radio radio
     mkdir /mnt/vendor/persist/factory 0755 vendor_tcmd vendor_tcmd
-    mkdir /mnt/vendor/persist/factory/audio 0755 vendor_tcmd system
+    mkdir /mnt/vendor/persist/factory/audio 0775 vendor_tcmd audio
     mkdir /mnt/vendor/persist/factory/wlan 0755 vendor_tcmd vendor_tcmd
     mkdir /mnt/vendor/persist/factory/regulatory 0755 vendor_tcmd system
     mkdir /mnt/vendor/persist/public 0755 vendor_tcmd vendor_tcmd
     mkdir /mnt/vendor/persist/public/att_dm 0775 radio vendor_tcmd
     mkdir /mnt/vendor/persist/public/hiddenmenu 0775 radio vendor_tcmd
     mkdir /mnt/vendor/persist/public/hiddenmenu/data 0775 system vendor_tcmd
+    mkdir /mnt/vendor/persist/uwb 0775 vendor_tcmd uwb
     mkdir /persist/public/locale 0700 system system
     mkdir /persist/public/omadm 0700 radio radio
     mkdir /persist/public/svcs 0770 system system
@@ -142,10 +143,6 @@ on post-fs-data
     # Setup folder for Pre-Activation Kill Switch app (PAKS)
     mkdir /mnt/vendor/persist/paks 02770 vendor_tcmd vendor_tcmd
 
-    chown system system /sys/class/power_supply/battery/cycle_count
-    chmod 0664 /sys/class/power_supply/battery/cycle_count
-    chmod 0664 /sys/class/power_supply/battery/charge_control_limit
-
     # Permissions for Factory Test of Charging Paths
     chown vendor_pwric vendor_pwric /sys/class/power_supply/battery/device/force_chg_auto_enable
     chown vendor_pwric vendor_pwric /sys/class/power_supply/battery/device/force_chg_ibatt
@@ -194,6 +191,11 @@ on post-fs-data
     chown root vendor_mod /sys/module/usbnet/parameters/force_on
     chmod 0666 /sys/module/usbnet/parameters/force_on
 
+    chown vendor_pwric vendor_pwric /mnt/vendor/persist/batt_health/first_usage_date
+    chmod 0664 /mnt/vendor/persist/batt_health/first_usage_date
+    chown vendor_pwric vendor_pwric /mnt/vendor/persist/batt_health/manufacturing_date
+    chmod 0664 /mnt/vendor/persist/batt_health/manufacturing_date
+
     # Setup folder for native to transfer data to NativeDropBoxAgent
     mkdir /data/vendor/dropbox-add 0730 log diag
 
@@ -222,12 +224,6 @@ on post-fs-data
 
     #Folder for hardware properties
     mkdir /data/vendor/hardware_revisions 0755 system system
-
-    # Imager tuning data for camera subsystem
-    mkdir /data/vendor/misc/imager 0771 camera camera
-
-    # Imager tuning metadata for camera subsystem
-    mkdir /data/vendor/misc/imager/metadata 0771 camera camera
 
     # NFC vendor data
     mkdir /data/vendor/nfc 0770 nfc nfc
@@ -373,3 +369,7 @@ service vendor.thermal-com /vendor/bin/thermal-engine-v2 --minimode
     socket thermal-recv-passive-client stream 0666 system oem_2907
     socket thermal-send-rule stream 0660 system oem_2907
     disabled
+
+on property:vendor.ultrasound.cal=1
+   chmod 0771 /mnt/vendor/persist/factory/audio/upd_calib_v2
+   chmod 0771 /mnt/vendor/persist/factory/audio/aop_calib_v2
