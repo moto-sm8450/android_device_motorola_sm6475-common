@@ -187,14 +187,14 @@ wait_for_poweron()
 setup_permissions()
 {
 	# Set permissions to enable factory touch tests
-	chgrp vendor_tcmd $touch_path/drv_irq
-	chgrp vendor_tcmd $touch_path/hw_irqstat
-	chgrp vendor_tcmd $touch_path/reset
+	chown root:vendor_tcmd $touch_path/drv_irq
+	chown root:vendor_tcmd $touch_path/hw_irqstat
+	chown root:vendor_tcmd $touch_path/reset
 
 	# Set permissions to allow Bug2Go access to touch statistics
-	chgrp log $touch_path/stats
+	chown root:log $touch_path/stats
 	# Erase is optional
-	[ -f $touch_path/erase_all ] && chgrp vendor_tcmd $touch_path/erase_all
+	[ -f $touch_path/erase_all ] && chown root:vendor_tcmd $touch_path/erase_all
 }
 
 read_touch_property()
