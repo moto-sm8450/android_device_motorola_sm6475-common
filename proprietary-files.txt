@@ -723,7 +723,6 @@ vendor/bin/qti
 vendor/bin/qwesd
 vendor/bin/rmt_storage
 vendor/bin/shsusrd
-vendor/bin/ssgqmigd64
 vendor/bin/tftp_server
 vendor/bin/tlpd
 vendor/bin/vendor.qti.syshealthmon-service
