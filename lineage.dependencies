@@ -1,15 +1,15 @@
 [
   {
-    "repository": "android_kernel_motorola_sm7435",
-    "target_path": "kernel/motorola/sm7435"
+    "repository": "android_kernel_motorola_sm6475",
+    "target_path": "kernel/motorola/sm6475"
   },
   {
-    "repository": "android_kernel_motorola_sm7435-modules",
-    "target_path": "kernel/motorola/sm7435-modules"
+    "repository": "android_kernel_motorola_sm6475-modules",
+    "target_path": "kernel/motorola/sm6475-modules"
   },
   {
-    "repository": "android_kernel_motorola_sm7435-devicetrees",
-    "target_path": "kernel/motorola/sm7435-devicetrees"
+    "repository": "android_kernel_motorola_sm6475-devicetrees",
+    "target_path": "kernel/motorola/sm6475-devicetrees"
   },
   {
     "repository": "android_hardware_motorola",

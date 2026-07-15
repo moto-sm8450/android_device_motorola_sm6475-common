@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/motorola/sm7435-common
+COMMON_PATH := device/motorola/sm6475-common
 
 # A/B
 AB_OTA_UPDATER := true
@@ -83,14 +83,14 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-TARGET_KERNEL_SOURCE := kernel/motorola/sm7435
+TARGET_KERNEL_SOURCE := kernel/motorola/sm6475
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     vendor/parrot_GKI.config \
     vendor/ext_config/moto-parrot.config \
     vendor/ext_config/moto-parrot-gki.config
 
-TARGET_KERNEL_EXT_MODULE_ROOT := kernel/motorola/sm7435-modules
+TARGET_KERNEL_EXT_MODULE_ROOT := kernel/motorola/sm6475-modules
 
 # Kernel Modules
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load))
@@ -250,4 +250,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
-include vendor/motorola/sm7435-common/BoardConfigVendor.mk
+include vendor/motorola/sm6475-common/BoardConfigVendor.mk

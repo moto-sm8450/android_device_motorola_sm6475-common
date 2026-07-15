@@ -14,9 +14,9 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.touch-service.moto_sm7435",
-    vintf_fragments: ["vendor.lineage.touch-service.moto_sm7435.xml"],
-    init_rc: ["vendor.lineage.touch-service.moto_sm7435.rc"],
+    name: "vendor.lineage.touch-service.moto_sm6475",
+    vintf_fragments: ["vendor.lineage.touch-service.moto_sm6475.xml"],
+    init_rc: ["vendor.lineage.touch-service.moto_sm6475.rc"],
     relative_install_path: "hw",
     proprietary: true,
     srcs: [
