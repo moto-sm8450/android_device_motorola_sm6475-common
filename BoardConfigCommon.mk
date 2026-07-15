@@ -103,6 +103,7 @@ TARGET_KERNEL_VERSION := 6.6
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/motorola/sm6475-modules
 
 # Kernel Modules
+ifeq (,$(TARGET_PREBUILT_KERNEL))
 BOARD_SYSTEM_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.systemdlkm_blocklist.msm.parrot
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load))
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.vendor_blocklist.msm.parrot
@@ -162,6 +163,7 @@ TARGET_KERNEL_EXT_MODULES += \
     motorola/drivers/input/misc/goodix_fod_mmi \
     motorola/drivers/input/misc/rbs_fod_mmi \
     motorola/drivers/moto_netopt/con_dfpar
+endif
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true

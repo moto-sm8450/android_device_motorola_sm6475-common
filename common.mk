@@ -192,18 +192,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_ENABLE_UFFD_GC := true
 
 # Lineage Health
+ifeq (,$(TARGET_PREBUILT_KERNEL))
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
 $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/module/qpnp_adaptive_charge/parameters/charging_enabled)
+endif
 
 # LiveDisplay
+ifeq (,$(TARGET_PREBUILT_KERNEL))
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay-service.sdm \
     vendor.lineage.livedisplay-service.sysfs
 
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 $(call soong_config_set_bool,livedisplay_sysfs,enable_se,true)
+endif
 
 # Memtrack
 PRODUCT_PACKAGES += \
@@ -366,11 +370,13 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
 
 # Touch
+ifeq (,$(TARGET_PREBUILT_KERNEL))
 PRODUCT_PACKAGES += \
     vendor.lineage.touch-service.motorola \
     vendor.lineage.touch-service.moto_sm6475
 
 $(call soong_config_set, MOTOROLA_TOUCH, HIGH_TOUCH_POLLING_PATH, /sys/class/touchscreen/primary/interpolation)
+endif
 
 # Update engine
 PRODUCT_PACKAGES += \
