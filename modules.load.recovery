@@ -249,6 +249,7 @@ hdcp_qseecom_dlkm.ko
 smcinvoke_dlkm.ko
 qseecom_dlkm.ko
 goodix_brl_mmi.ko
+hall_pen.ko
 mmi_annotate.ko
 mmi_info.ko
 mmi_relay.ko
